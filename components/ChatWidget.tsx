@@ -79,12 +79,28 @@ export default function ChatWidget() {
     } catch (error) {
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: 'Sorry, something went wrong. Please try again or email me directly at contact@aidevdanyal.com',
+        content: 'Sorry, something went wrong. Please try again or email me directly at aidevdanyal@gmail.com',
         timestamp: new Date(),
       }]);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const renderMessageContent = (content: string) => {
+    // Replace [EMAIL]...[/EMAIL] with clickable email link
+    let rendered = content.replace(
+      /\[EMAIL\](.*?)\[\/EMAIL\]/g,
+      '<a href="https://mail.google.com/mail/?view=cm&fs=1&to=$1" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:underline font-bold">📧 $1</a>'
+    );
+
+    // Replace [WHATSAPP]...[/WHATSAPP] with clickable WhatsApp link
+    rendered = rendered.replace(
+      /\[WHATSAPP\](.*?)\[\/WHATSAPP\]/g,
+      '<a href="https://wa.me/923464141007" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:underline font-bold">💬 $1</a>'
+    );
+
+    return rendered;
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -151,7 +167,10 @@ export default function ChatWidget() {
                       ? 'bg-neon-cyan/20 text-white border border-neon-cyan/30'
                       : 'bg-bg-tertiary text-text-primary border border-neon-cyan/10'
                   }`}>
-                    <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+                    <p
+                      className="text-sm whitespace-pre-wrap"
+                      dangerouslySetInnerHTML={{ __html: renderMessageContent(msg.content) }}
+                    />
                   </div>
                 </motion.div>
               ))}

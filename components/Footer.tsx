@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex justify-center gap-6 mb-6">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/DevDanyal"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-secondary hover:text-neon-cyan transition-colors duration-300"
@@ -21,7 +21,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/dev-danyal-72b295405/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-secondary hover:text-neon-cyan transition-colors duration-300"

@@ -33,16 +33,21 @@ export default function Contact() {
             </Button>
             <Button
               variant="secondary"
-              onClick={() => window.open('https://cal.com/aidevdanyal/30min', '_blank')}
+              onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=aidevdanyal@gmail.com', '_blank')}
             >
-              BOOK A 30-MIN CALL
+              EMAIL ME
             </Button>
           </div>
 
           <div className="mt-8 space-y-2">
-            <p className="text-text-muted font-mono text-sm">
-              📧 contact@aidevdanyal.com
-            </p>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=aidevdanyal@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-muted font-mono text-sm hover:text-neon-cyan transition-colors duration-300 inline-block"
+            >
+              📧 aidevdanyal@gmail.com
+            </a>
             <p className="text-sm text-text-secondary">
               <span className="inline-block w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
               Available for projects

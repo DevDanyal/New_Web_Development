@@ -8,8 +8,9 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
+    { label: 'HOME', href: '#' },
+    { label: 'ABOUT', href: '#about' },
     { label: 'PROJECTS', href: '#projects' },
-    { label: 'SKILLS', href: '#skills' },
     { label: 'CONTACT', href: '#contact' },
   ];
 
